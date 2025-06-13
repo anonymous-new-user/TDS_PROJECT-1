@@ -595,11 +595,7 @@ def parse_llm_response(response):
         }
 
 # Define API routes
-@app.get("/")
-def home():
-    return {"message": "TDS Virtual TA API is running. Please POST to this endpoint."}
-
-@app.post("/")
+@app.post("/query")
 async def query_knowledge_base(request: QueryRequest):
     try:
         # Log the incoming request
